@@ -1,4 +1,4 @@
-# ⚔️ Jogo da velha — imersão em sistemas distribuídos com IA
+# ⚔️ Jogo da Velha — Imersão em Sistemas Distribuídos com IA
 
 Seja bem-vindo ao ambiente de criação do **Jogo da Velha Distribuído**, utilizando uma **IA de Mentoria** para guiar o aprendizado em Python, Tornado e WebSockets.
 
@@ -33,7 +33,7 @@ Este projeto utiliza o padrão [AGENTS.md](https://agents.md/) para definir e or
 
 ---
 
-## 🚀 Primeiros passos: ativando sua imersão
+## 🚀 Primeiros passos: Ativando sua imersão
 
 Para dar início ao desenvolvimento, você precisará utilizar uma IDE acoplada a um assistente de IA (ex: Cursor, Cline, Roo Code, etc.) configurada no diretório atual:
 
@@ -53,7 +53,7 @@ Ao concluir esta jornada de mentoria, você terá em mãos um jogo robusto e tot
 * 🚪 **Sistema de Salas Privadas:** Criação de partidas isoladas via links ou QR Codes. Dezenas de duplas podem jogar simultaneamente no seu servidor sem interferirem no tabuleiro uns dos outros.
 * 📱 **Interface Moderna e Responsiva:** Visual imersivo, fluido e desenhado para gerar uma excelente experiência tanto no desktop quanto no celular.
 
-### 🚀 Principais skills adquiridas
+### 🚀 Principais habilidades adquiridas
 
 Finalizar este treinamento comprovará seu domínio tático nas seguintes trincheiras:
 
