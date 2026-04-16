@@ -1,9 +1,7 @@
-import { UI } from './ui.js';
-
 export class WS {
-    constructor() {
+    constructor(ui) {
         this.socket = null;
-        this.ui = new UI();
+        this.ui = ui;
     }
 
     connect(roomId) {
@@ -33,7 +31,7 @@ export class WS {
     handleMessage(data) {
         if (data.type === 'init') {
             this.ui.setStatus(`Você é o jogador ${data.symbol}`);
-            this.ui.showBoard();  // Adicione esta linha
+            this.ui.showBoard();
         } else if (data.type === 'wait') {
             this.ui.setStatus(data.message);
         } else if (data.type === 'update') {

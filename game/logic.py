@@ -54,39 +54,41 @@ class GameLogic:
     def assign_player(self, player_id: str) -> str | None:
         if self._state.player_x_id is None:
             self._state = GameState(
-                board=self._state.board, current_turn=self._state.current_turn,
-                winner=self._state.winner, game_over=self._state.game_over,
-                player_x_id=player_id, player_o_id=self._state.player_o_id,
+                board=self._state.board,
+                current_turn=self._state.current_turn,
+                winner=self._state.winner,
+                game_over=self._state.game_over,
+                player_x_id=player_id,
+                player_o_id=self._state.player_o_id,
             )
             return "X"
         elif self._state.player_o_id is None:
             self._state = GameState(
-                board=self._state.board, current_turn=self._state.current_turn,
-                winner=self._state.winner, game_over=self._state.game_over,
-                player_x_id=self._state.player_x_id, player_o_id=player_id,
+                board=self._state.board,
+                current_turn=self._state.current_turn,
+                winner=self._state.winner,
+                game_over=self._state.game_over,
+                player_x_id=self._state.player_x_id,
+                player_o_id=player_id,
             )
             return "O"
         return None
 
     def remove_player(self, player_id: str) -> None:
-        player_x = self._state.player_x_id if self._state.player_x_id != player_id else None
-        player_o = self._state.player_o_id if self._state.player_o_id != player_id else None
+        player_x = None if self._state.player_x_id == player_id else self._state.player_x_id
+        player_o = None if self._state.player_o_id == player_id else self._state.player_o_id
         self._state = GameState(
-            board=self._state.board, current_turn=self._state.current_turn,
-            winner=self._state.winner, game_over=self._state.game_over,
-            player_x_id=player_x, player_o_id=player_o,
+            board=self._state.board,
+            current_turn=self._state.current_turn,
+            winner=self._state.winner,
+            game_over=self._state.game_over,
+            player_x_id=player_x,
+            player_o_id=player_o,
         )
 
     def is_full(self) -> bool:
         return self._state.player_x_id is not None and self._state.player_o_id is not None
 
     def can_start(self) -> bool:
-        return self.is_full()
+        return self.is_full()   
 
-    def reset(self) -> None:
-        new_turn = self._state.winner if self._state.winner in ["X", "O"] else "X"
-        self._state = GameState(
-            player_x_id=self._state.player_x_id,
-            player_o_id=self._state.player_o_id,
-            current_turn=new_turn,
-        )

@@ -23,7 +23,14 @@ export class UI {
         for (let r = 0; r < 3; r++) {
             for (let c = 0; c < 3; c++) {
                 const cell = document.querySelector(`[data-row="${r}"][data-col="${c}"]`);
-                cell.textContent = state.board[r][c] || '';
+                const value = state.board[r][c] || '';
+                cell.textContent = value;
+                cell.classList.remove('x', 'o');
+                if (value === 'X') {
+                    cell.classList.add('x');
+                } else if (value === 'O') {
+                    cell.classList.add('o');
+                }
             }
         }
         this.updateStatus(state);
